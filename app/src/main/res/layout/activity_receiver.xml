@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.fa17.ssu385.fa_2017_h3.ReceiverActivity">
 
+    <FrameLayout
+        android:id="@+id/reciever_Frame_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
 </android.support.constraint.ConstraintLayout>
