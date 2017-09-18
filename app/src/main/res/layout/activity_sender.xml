@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.fa17.ssu385.fa_2017_h3.SenderActivity">
 
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container_sender">
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
