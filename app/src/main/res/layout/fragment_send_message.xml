@@ -5,10 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.fa17.ssu385.fa_2017_h3.SendMessageFragment">
 
-    /--
-    LEFT OFF ON NUMBER 11
-    --/
-
     <LinearLayout
         android:id="@+id/fragment_send_message1"
         android:layout_width="0dp"
