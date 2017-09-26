@@ -4,6 +4,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.fa17.ssu385.fa_2017_h3.ReceiveMessageFragment">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/recfrag_linear_layout1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:padding="15px">
 
+        <TextView
+            android:id="@+id/recfrag_linlay1_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="You have received a message from: " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recfrag_linlay1_textview2"
+            android:layout_weight="2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/recfrag_linear_layout2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recfrag_linear_layout1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/recfrag_linlay2_textview1"
+            android:layout_weight="2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recfrag_linlay2_button"
+            android:padding="15dp"
+            android:layout_weight="0"
+            android:layout_gravity="center_horizontal"
+            android:text="reply"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
