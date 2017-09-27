@@ -10,28 +10,56 @@
         android:layout_height="wrap_content"
         android:id="@+id/linear1"
         android:orientation="horizontal"
-        android:background="@color/colorPrimaryDark"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         android:padding="15dp"
-        ></LinearLayout>
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:layout_weight="0dp"
+            android:text="Enter your name: "/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText1"
+            android:layout_weight="2"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/linear2"
         android:orientation="horizontal"
-        android:background="@color/colorPrimary"
         app:layout_constraintTop_toBottomOf="@+id/linear1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:padding="15dp"
-        ></LinearLayout>
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_weight="0"
+            android:text="Enter your message: "/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:layout_weight="2"
+            android:inputType="textMultiLine"/>
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="15dp"
+        android:text="send"/>
 
 </android.support.constraint.ConstraintLayout>
