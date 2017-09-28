@@ -19,7 +19,7 @@ public class SendMessageFragment extends Fragment {
     private EditText nameText;
     private EditText messageText;
     private Button sendButton;
-    private onSendButtonClick clicked;
+    private OnSendButtonClick clicked;
 
     public SendMessageFragment() {
         // Required empty public constructor
@@ -28,7 +28,7 @@ public class SendMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (SenderActivity)getActivity();
+        clicked = (SenderActivity)getActivity();
     }
 
 
@@ -37,15 +37,15 @@ public class SendMessageFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
-        nameText = view.findViewById(R.name_text);
-        messageText = view.findViewById(R.message_text);
-        sendButton = view.findViewById(R.send_button);
+        nameText = view.findViewById(R.id.name_text);
+        messageText = view.findViewById(R.id.message_text);
+        sendButton = view.findViewById(R.id.send_button);
 
         sendButton.setOnClickListener(new View.OnClickListener(){
            public void onClick(View v){
                String nameInput = nameText.getText().toString();
                String messageInput = messageText.getText().toString();
-               listener.onClick(nameInput,messageInput);
+               clicked.onClick(nameInput,messageInput);
            }
         });
 
@@ -53,7 +53,7 @@ public class SendMessageFragment extends Fragment {
 
     }
 
-    public interface onSendButtonClick{
+    public interface OnSendButtonClick{
         void onClick(String senderName, String senderMessage);
     }
 
