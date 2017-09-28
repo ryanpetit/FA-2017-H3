@@ -18,11 +18,9 @@ public class ReceiverActivity extends AppCompatActivity {
         Bundle args = new Bundle();
 
         if (getIntent().hasExtra(SENDER_NAME_KEY)) {
-            Log.d("IN RECEIVER name:",  getIntent().getStringExtra(SENDER_NAME_KEY));
             args.putString(ReceiveMessageFragment.NAME_KEY, getIntent().getStringExtra(SENDER_NAME_KEY));
         }
         if (getIntent().hasExtra(SENDER_MESSAGE_KEY)) {
-            Log.d("IN RECEIVER Message: ",  getIntent().getStringExtra(SENDER_MESSAGE_KEY));
             args.putString(ReceiveMessageFragment.MESSAGE_KEY, getIntent().getStringExtra(SENDER_MESSAGE_KEY));
         }
 
