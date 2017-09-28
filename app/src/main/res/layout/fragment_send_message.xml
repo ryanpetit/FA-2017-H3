@@ -28,6 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -37,7 +38,7 @@
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="@+id/send_constraint_layout"
         app:layout_constraintRight_toRightOf="@+id/send_constraint_layout"
-        app:layout_constraintTop_toBottomOf="@+id/send_constraint_layout"
+        app:layout_constraintTop_toBottomOf="@+id/send_linear_layout1"
         android:padding="15dp">
 
         <TextView
