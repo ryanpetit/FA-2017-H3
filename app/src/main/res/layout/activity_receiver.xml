@@ -9,7 +9,7 @@
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/receiver_frame_layout">
+        android:id="@+id/receiver_fragment_container">
 
     </FrameLayout>
 
