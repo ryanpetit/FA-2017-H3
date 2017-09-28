@@ -51,6 +51,7 @@ public class SendMessageFragment extends Fragment {
 
         return view;
 
+
     }
 
     public interface OnSendButtonClick{
