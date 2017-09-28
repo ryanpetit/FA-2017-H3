@@ -5,9 +5,12 @@ import android.os.Bundle;
 
 public class SenderActivity extends AppCompatActivity {
 
+    private SendMessageFragment sendIt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sender);
+        SendMessageFragment(mySendMessageFragment = new SendMessageFragment());
     }
 }
