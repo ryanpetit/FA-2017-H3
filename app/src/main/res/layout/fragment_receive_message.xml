@@ -19,14 +19,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/linear_1_text_view_1"
+            android:id="@+id/message_from"
             android:layout_weight="0"
             android:text="You have received a message from: "/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/linear_1_text_view_2"
+            android:id="@+id/receive_users_name"
             android:layout_weight="2"/>
 
     </LinearLayout>
@@ -45,13 +45,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/linear_2_text_view"
+            android:id="@+id/receive_users_message"
             android:layout_weight="2"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/linear_2_button"
+            android:id="@+id/reply_button"
             android:layout_margin="15dp"
             android:layout_weight="0"
             android:layout_gravity="center_horizontal"
