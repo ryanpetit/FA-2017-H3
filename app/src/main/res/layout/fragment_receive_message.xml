@@ -24,8 +24,9 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:id="@+id/receive_textview2"
+            android:padding="10dp"
             android:layout_weight="2"/>
 
     </LinearLayout>
@@ -37,23 +38,24 @@
         android:orientation="vertical"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/receive_layout1"
+        app:layout_constraintTop_toBottomOf="@+id/receive_layout1"
         app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:id="@+id/receive_textview3"
-        android:layout_weight="2"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/receive_textview3"
+            android:padding="15dp"
+            android:layout_weight="2"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/receive_button"
-        android:layout_margin="15dp"
-        android:layout_weight="0"
-        android:layout_gravity="center_horizontal"
-        android:text="REPLY"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/receive_button"
+            android:layout_margin="15dp"
+            android:layout_weight="0"
+            android:layout_gravity="center_horizontal"
+            android:text="REPLY"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
