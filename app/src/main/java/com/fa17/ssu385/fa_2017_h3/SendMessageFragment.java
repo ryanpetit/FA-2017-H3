@@ -17,11 +17,10 @@ import android.widget.TextView;
  */
 public class SendMessageFragment extends Fragment {
 
-    private TextView textName;
-    private TextView textMessage;
     private EditText userName;
     private EditText userMessage;
     private Button button;
+    private OnSendButtonClick listener;
 
     public SendMessageFragment() {
         // Required empty public constructor
@@ -40,8 +39,6 @@ public class SendMessageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
 
-        textName = view.findViewById(R.id.send_linear_text1);
-        textMessage = view.findViewById(R.id.send_linear_text2);
         userName = view.findViewById(R.id.send_linear_edit1);
         userMessage = view.findViewById(R.id.send_linear_edit2);
         button = view.findViewById(R.id.send_button);
@@ -49,18 +46,15 @@ public class SendMessageFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name;
-                String message;
-                name = userName.getText().toString();
-                message = userMessage.getText().toString();
+                String name = userName.getText().toString();
+                String message = userMessage.getText().toString();
+
                 listener.onClick(name, message);
             }
         });
 
         return view;
     }
-
-    private OnSendButtonClick listener;
 
     public interface OnSendButtonClick {
         void onClick(String senderName, String senderMessage);

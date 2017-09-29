@@ -37,7 +37,7 @@
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/recieve_constraint_layout"
         app:layout_constraintRight_toRightOf="@+id/recieve_constraint_layout"
-        app:layout_constraintTop_toTopOf="@+id/recieve_linear_layout1"
+        app:layout_constraintTop_toBottomOf="@+id/recieve_linear_layout1"
         app:layout_constraintBottom_toBottomOf="@+id/recieve_constraint_layout"
         android:orientation="vertical">
 
