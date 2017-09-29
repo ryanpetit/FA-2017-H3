@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/recieve_constraint_layout"
+    android:id="@+id/recieve_fragment_layout"
     tools:context="com.fa17.ssu385.fa_2017_h3.ReceiveMessageFragment">
 
     <LinearLayout
@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="15dp"
-        app:layout_constraintLeft_toLeftOf="@+id/recieve_constraint_layout"
-        app:layout_constraintRight_toRightOf="@+id/recieve_constraint_layout"
-        app:layout_constraintTop_toTopOf="@+id/recieve_constraint_layout">
+        app:layout_constraintLeft_toLeftOf="@+id/recieve_fragment_layout"
+        app:layout_constraintRight_toRightOf="@+id/recieve_fragment_layout"
+        app:layout_constraintTop_toTopOf="@+id/recieve_fragment_layout">
 
         <TextView
             android:id="@+id/recieve_linear1_text1"
@@ -35,10 +35,10 @@
         android:id="@+id/recieve_linear_layout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintLeft_toLeftOf="@+id/recieve_constraint_layout"
-        app:layout_constraintRight_toRightOf="@+id/recieve_constraint_layout"
+        app:layout_constraintLeft_toLeftOf="@+id/recieve_fragment_layout"
+        app:layout_constraintRight_toRightOf="@+id/recieve_fragment_layout"
         app:layout_constraintTop_toBottomOf="@+id/recieve_linear_layout1"
-        app:layout_constraintBottom_toBottomOf="@+id/recieve_constraint_layout"
+        app:layout_constraintBottom_toBottomOf="@+id/recieve_fragment_layout"
         android:orientation="vertical">
 
         <TextView

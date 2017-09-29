@@ -49,7 +49,7 @@ public class ReceiveMessageFragment extends Fragment {
         replyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                listener.onClick();
             }
         });
 
