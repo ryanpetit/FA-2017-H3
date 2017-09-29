@@ -45,8 +45,8 @@ public class SendMessageFragment extends Fragment {
             public void onClick(View v){
                 public String nameString;
                 public String messageString;
-                nameString = nameInput.getText().toString();
-                messageString = messageInput.getText().toString();
+                supremeNameText = nameString.getText().toString();
+                infidelMessageText = messageString.getText().toString();
             }
         });
         return view;
