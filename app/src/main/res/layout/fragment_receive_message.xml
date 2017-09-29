@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.fa17.ssu385.fa_2017_h3.ReceiveMessageFragment">
 <LinearLayout
-    android:id="@+id/reply_message_container"
+    android:id="@+id/sender_name_container"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -14,29 +14,29 @@
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent">
     <TextView
-        android:id="@+id/received_message_label"
+        android:id="@+id/sender_name_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:text="You've received a message from: "/>
     <TextView
-        android:id="@+id/received_message"
+        android:id="@+id/sender_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"/>
     </LinearLayout>
 <LinearLayout
-    android:id="@+id/temp_id_2"
+    android:id="@+id/message_container"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:orientation="vertical"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/reply_message_container"
+    app:layout_constraintTop_toBottomOf="@id/sender_name_container"
     app:layout_constraintBottom_toBottomOf="parent"
     >
     <TextView
-        android:id="@+id/temp_id_5"
+        android:id="@+id/received_message"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"/>
