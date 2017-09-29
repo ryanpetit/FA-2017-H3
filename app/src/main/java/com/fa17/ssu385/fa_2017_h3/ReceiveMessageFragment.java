@@ -15,8 +15,8 @@ import org.w3c.dom.Text;
  * A simple {@link Fragment} subclass.
  */
 public class ReceiveMessageFragment extends Fragment {
-    public static final String nameString;
-    public static final String messageString;
+    public static final String nameString = "name_string_key";
+    public static final String messageString = "message_string_key";
     private TextView nameTextView;
     private TextView messageTextView;
 

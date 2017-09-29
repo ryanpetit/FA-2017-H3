@@ -2,10 +2,11 @@ package com.fa17.ssu385.fa_2017_h3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class ReceiverActivity extends AppCompatActivity {
-    public static final String senderNameString;
-    public static final String senderMessageString;
+    public static final String senderNameString = "sender_name_string";
+    public static final String senderMessageString = "sender_message_string";
     private ReceiveMessageFragment receiveMessageFragment;
 
 
@@ -13,7 +14,8 @@ public class ReceiverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
-        receiveMessageFragment = (receiveMessageFragment)findViewById(R.id.user_message_submission_box);
+        receiveMessageFragment = new ReceiveMessageFragment();
+
         Bundle args = new Bundle();
 
         if(getIntent().hasExtra(senderNameString))	{
