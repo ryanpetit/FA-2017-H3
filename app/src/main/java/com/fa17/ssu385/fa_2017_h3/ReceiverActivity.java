@@ -26,6 +26,6 @@ public class ReceiverActivity extends AppCompatActivity {
 
         receiverMessageFragment.setArguments(args);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.receiver_fragment_container, receiverMessageFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.receive_fragment, receiverMessageFragment).commit();
     }
 }

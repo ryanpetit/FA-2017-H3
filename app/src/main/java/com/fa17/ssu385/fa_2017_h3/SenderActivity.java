@@ -14,7 +14,7 @@ public class SenderActivity extends AppCompatActivity implements SendMessageFrag
         setContentView(R.layout.activity_sender);
         mySendMessageFragment = new SendMessageFragment();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.sender_frame_layout, mySendMessageFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.send_frame_layout, mySendMessageFragment).commit();
     }
 
     @Override

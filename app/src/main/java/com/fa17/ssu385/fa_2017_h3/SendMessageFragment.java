@@ -39,7 +39,7 @@ public class SendMessageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
         senderNameEditText = view.findViewById(R.id.sender_name_edit_text);
-        senderMessageEditText = view.findViewById(R.id.sender_message_edit_text);
+        senderMessageEditText = view.findViewById(R.id.sender_message_text);
         senderButton = view.findViewById(R.id.sender_button);
 
         senderButton.setOnClickListener(new View.OnClickListener() {
