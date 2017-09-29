@@ -23,7 +23,7 @@
             android:text="@string/name_prompt_text"/>
 
         <EditText
-            android:id="@+id/ll1_edittext"
+            android:id="@+id/username"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"/>
@@ -47,7 +47,7 @@
             android:text="@string/message_prompt_text"/>
 
         <EditText
-            android:id="@+id/ll2_edittext"
+            android:id="@+id/user_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -55,7 +55,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/fragment_send_button"
+        android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
