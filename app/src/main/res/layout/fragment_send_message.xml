@@ -16,13 +16,13 @@
         android:padding="15dp">
         
         <TextView
-            android:id="@+id/send_text1"
+            android:id="@+id/name_prompt"
             android:layout_weight="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter your name: "/>
         <EditText
-            android:id="@+id/send_edit1"
+            android:id="@+id/enter_name"
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
@@ -39,13 +39,13 @@
         android:padding="15dp">
         
         <TextView
-            android:id="@+id/send_text2"
+            android:id="@+id/message_prompt"
             android:layout_weight="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter your message: "/>
         <EditText
-            android:id="@+id/send_edit2"
+            android:id="@+id/enter_message"
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
