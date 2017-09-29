@@ -16,9 +16,9 @@ import android.widget.EditText;
  */
 public class SendMessageFragment extends Fragment {
 
-    private EditText edit1;
-    private EditText edit2;
-    private Button button1;
+    private EditText nameInput;
+    private EditText messageInput;
+    private Button sendButton;
 
     private OnSendButtonClick listener;
 
@@ -29,26 +29,31 @@ public class SendMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (OnSendButtonClick)getActivity();
+        listener = (OnSendButtonClick)getActivity();  // listener = the SenderActivity parent obj
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
-        edit1 = view.findViewById(R.id.edit1);
-        edit2 = view.findViewById(R.id.edit2);
-        button1 = view.findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
+
+        // Link elements
+        nameInput = view.findViewById(R.id.nameInput);
+        messageInput = view.findViewById(R.id.messageInput);
+        sendButton = view.findViewById(R.id.sendButton);
+
+        // Create onClick listener for send button
+        sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = edit1.getText().toString();
-                String message = edit2.getText().toString();
-                listener.onClick(name, message);
+                // This code is executed in the main thread when the user presses this button
+                String name = nameInput.getText().toString();  // fetch contents of nameInput
+                String message = messageInput.getText().toString();  // fetch contents of messageInput
+                listener.onClick(name, message);  // call the onClick function of SenderActivity
             }
        });
+
         return view;
     }
 
