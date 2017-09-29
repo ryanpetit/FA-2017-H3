@@ -1,5 +1,6 @@
 package com.fa17.ssu385.fa_2017_h3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -22,7 +23,12 @@ public class SenderActivity extends AppCompatActivity implements SendMessageFrag
     }
 
 
+
+
+
     @Override
-    public void onClick(String )
-        Intent intent
+    public void onClick(String senderName, String senderMessage) {
+        Intent intent = new Intent(SenderActivity, ReceiverActivity);
+
+    }
 }

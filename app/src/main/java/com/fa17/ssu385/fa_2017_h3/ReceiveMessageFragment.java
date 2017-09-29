@@ -15,8 +15,8 @@ import android.widget.TextView;
  */
 public class ReceiveMessageFragment extends Fragment {
 
-    public static final string NAME_KEY = "name_key";
-    public static final string MESSAGE_KEY = "message_key";
+    public static final string name = "name";
+    public static final string message = "message";
 
     private TextView nameReceipt;
     private TextView messageText;
@@ -31,20 +31,23 @@ public class ReceiveMessageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_receive_message, container, false);
+        View view = inflater.inflate(R.layout.fragment_receive_message, container, false);
 
-        nameReceipt =;
-        messageText =;
+        nameReceipt = (TextView)view.findViewById(R.id.receive_text1);
+        messageText = (TextView)view.findViewById(R.id.receive_text2);
         reply =;
 
 
 
         if (getArguments() != null) {
-            if(getArguments().containskey(NAME_KEY)) {
-                nameReceipt.setText(getArguments().getString(NAME_KEY));
+            if(getArguments().containsKey(name)) {
+                nameReceipt.setText(getArguments().getString(name));
             }
-            if(getArguments().containsKey())
+            if(getArguments().containsKey(message)) {
+                messageText.setText(getArguments().getString(message));
+            }
         }
+        return view;
     }
 
 }

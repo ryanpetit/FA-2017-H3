@@ -51,7 +51,7 @@ public class SendMessageFragment extends Fragment {
                 String name = send_edit11.getText().toString();
                 String message = send_edit22.getText().toString();
                 listener.onClick(name, message);
-
++
         });
 
         return view;
