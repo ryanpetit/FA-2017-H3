@@ -4,10 +4,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class ReceiverActivity extends AppCompatActivity {
+    public static final String SENDER_NAME_KEY = "Gary";
+    public static final String SENDER_MESSAGE_KEY = "Naz is such a badass!";
+    private ReceiveMessageFragment theReceivedMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
+        theReceivedMessage = new ReceiveMessageFragment();
+        Bundle args = new Bundle();
+        if(getIntent().hasExtra(SENDER_NAME_KEY)) {
+            args.putString(ReceiveMessageFragment.NAME_KEY, getIntent().getStringExtra(SENDER_NAME_KEY));
+        }
+        if(getIntent().hasExtra(SENDER_MESSAGE_KEY)) {
+            args.putString(ReceiveMessageFragment.MESSAGE_TEXT, getIntent().getStringExtra(SENDER_MESSAGE_KEY));
+        }
+        theReceivedMessage.setArguments(args);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.receiverFrameLayout1, theReceivedMessage).commit();
     }
 }
