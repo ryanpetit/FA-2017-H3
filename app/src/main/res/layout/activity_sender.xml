@@ -9,9 +9,6 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/senderFrameLayout1">
+        android:id="@+id/asFrameLayout1">
     </FrameLayout>
-
-
-
 </android.support.constraint.ConstraintLayout>
