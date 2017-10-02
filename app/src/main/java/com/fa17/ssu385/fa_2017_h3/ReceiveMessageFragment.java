@@ -1,6 +1,7 @@
 package com.fa17.ssu385.fa_2017_h3;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,6 +29,11 @@ public class ReceiveMessageFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        listener = (OnReplyButtonClick) getActivity();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,13 +45,6 @@ public class ReceiveMessageFragment extends Fragment {
         message = (TextView)view.findViewById(R.id.receive_users_message);
         replyButton = (Button)view.findViewById(R.id.reply_button);
 
-        replyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.onClick();
-            }
-        });
-
         if(getArguments() != null) {
             if(getArguments().containsKey(NAME_KEY)) {
                 String nameVal = getArguments().getString(NAME_KEY);
@@ -56,6 +55,14 @@ public class ReceiveMessageFragment extends Fragment {
                 message.setText(getArguments().getString(MESSAGE_KEY));
             }
         }
+
+        replyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick();
+            }
+        });
+
         return view;
     }
 

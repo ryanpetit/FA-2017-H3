@@ -15,8 +15,8 @@ public class SenderActivity extends AppCompatActivity implements SendMessageFrag
         sendFragment = new SendMessageFragment();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_sender, sendFragment)
-                .commit();
+                                   .add(R.id.fragment_container_sender, sendFragment)
+                                   .commit();
 
     }
 

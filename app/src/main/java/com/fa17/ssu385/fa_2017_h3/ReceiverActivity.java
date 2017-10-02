@@ -43,14 +43,21 @@ public class ReceiverActivity extends AppCompatActivity implements ReceiveMessag
     @Override
     public void onClick() {
         sendMessageFragment = new SendMessageFragment();
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container_receiver, sendMessageFragment);
-        transaction.commit();
+        getSupportFragmentManager().beginTransaction()
+                                   .replace(R.id.fragment_container_receiver, sendMessageFragment)
+                                   .addToBackStack(null)
+                                   .commit();
     }
 
     @Override
     public void onClick(String senderName, String senderMessage) {
-
+        Intent receiverIntent = new Intent(this, ReceiverActivity.class);
+        if(senderName != null) {
+            receiverIntent.putExtra(ReceiverActivity.SENDER_NAME_KEY, senderName);
+        }
+        if(senderMessage != null) {
+            receiverIntent.putExtra(ReceiverActivity.SENDER_MESSAGE_KEY, senderMessage);
+        }
+        startActivity(receiverIntent);
     }
 }
