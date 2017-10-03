@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckedTextView;
 import android.widget.EditText;
 
 
@@ -17,8 +16,6 @@ import android.widget.EditText;
  */
 public class SendMessageFragment extends Fragment {
 
-    //private onClick...
-
     public SendMessageFragment() {
         // Required empty public constructor
     }
@@ -26,6 +23,7 @@ public class SendMessageFragment extends Fragment {
     private EditText supremeNameText;
     private EditText infidelMessageText;
     private Button sendMessageButton;
+    private OnSendButtonClick listener;
 
     @Override
     public void onAttach(Context context) {
@@ -35,10 +33,9 @@ public class SendMessageFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = new View(inflater);
+        View view = inflater.inflate(R.layout.fragment_send_message, container, false);
         supremeNameText = (EditText)view.findViewById(R.id.supreme_edit_text);
         infidelMessageText = (EditText)view.findViewById(R.id.infidel_edit_text);
         sendMessageButton = (Button)view.findViewById(R.id.send_message_button);
@@ -48,13 +45,10 @@ public class SendMessageFragment extends Fragment {
             public void onClick(View v){
                 String nameString = supremeNameText.getText().toString();
                 String messageString = infidelMessageText.getText().toString();
-                //supremeNameText = nameString.getText().toString();
-                //infidelMessageText = messageString.getText().toString();
-                listener.onClick(string1, string2);
+                listener.onClick(nameString, messageString);
             }
         });
         return view;
-        //return view.inflate(R.layout.fragment_send_message, container, false);
     }
 
     public interface OnSendButtonClick{
