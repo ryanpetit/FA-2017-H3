@@ -4,14 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fa17.ssu385.fa_2017_h3.SenderActivity">
+    tools:context="com.fa17.ssu385.fa_2017_h3.NewActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_container">
-
-    </FrameLayout>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'm New"/>
 
 </android.support.constraint.ConstraintLayout>

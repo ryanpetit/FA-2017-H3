@@ -21,6 +21,7 @@ public class SendMessageFragment extends Fragment {
     private EditText Edit1;
     private EditText Edit2;
     private Button Button1;
+
     private OnSendButtonClick sendButtonClick;
 
 
@@ -31,7 +32,7 @@ public class SendMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        sendButtonClick = (SenderActivity)getActivity();
+        sendButtonClick = (OnSendButtonClick) getActivity();
     }
 
     @Override
