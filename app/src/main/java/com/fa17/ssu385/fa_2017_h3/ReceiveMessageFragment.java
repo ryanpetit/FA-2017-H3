@@ -19,6 +19,7 @@ public class ReceiveMessageFragment extends Fragment {
     public static final String MESSAGE_KEY = "message_key";
     private TextView receiverFragmentLinearLayout1TextView2; //Name
     private TextView getReceiverFragmentLinearLayout2TextView1; //Message
+    private OnReplyButtonClick listener;
 
     public ReceiveMessageFragment() {
         // Required empty public constructor
@@ -45,6 +46,10 @@ public class ReceiveMessageFragment extends Fragment {
         }
 
         return view;
+    }
+
+    public interface OnReplyButtonClick{
+        void OnClick();
     }
 
 }
