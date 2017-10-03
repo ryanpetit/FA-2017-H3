@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 
 
@@ -16,6 +17,7 @@ import android.widget.EditText;
  */
 public class SendMessageFragment extends Fragment {
 
+    //private onClick...
 
     public SendMessageFragment() {
         // Required empty public constructor
@@ -28,6 +30,7 @@ public class SendMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        listener = (SenderActivity)getActivity();
     }
 
 
@@ -35,22 +38,27 @@ public class SendMessageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater;
-        supremeNameText = view.findViewById(R.id.supreme_edit_text);
-        infidelMessageText = view.findViewById(R.id.infidel_edit_text);
-        sendMessageButton = view.findViewById(R.id.send_message_button);
+        View view = new View(inflater);
+        supremeNameText = (EditText)view.findViewById(R.id.supreme_edit_text);
+        infidelMessageText = (EditText)view.findViewById(R.id.infidel_edit_text);
+        sendMessageButton = (Button)view.findViewById(R.id.send_message_button);
 
         sendMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                public String nameString;
-                public String messageString;
-                supremeNameText = nameString.getText().toString();
-                infidelMessageText = messageString.getText().toString();
+                String nameString = supremeNameText.getText().toString();
+                String messageString = infidelMessageText.getText().toString();
+                //supremeNameText = nameString.getText().toString();
+                //infidelMessageText = messageString.getText().toString();
+                listener.onClick(string1, string2);
             }
         });
         return view;
         //return view.inflate(R.layout.fragment_send_message, container, false);
+    }
+
+    public interface OnSendButtonClick{
+        void onClick(String senderName, String senderMessage);
     }
 
 }
