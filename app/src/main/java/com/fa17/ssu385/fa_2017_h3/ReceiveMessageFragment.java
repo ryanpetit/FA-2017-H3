@@ -40,6 +40,7 @@ public class ReceiveMessageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_receive_message, container, false);
         nameReceipt = (TextView)view.findViewById(R.id.Text5);
         messageText = (TextView)view.findViewById(R.id.Text3);
+        replyButton = (Button)view.findViewById(R.id.Button2);
         if(getArguments() != null){
             if(getArguments().containsKey(NAME_KEY)){
                 nameReceipt.setText(getArguments().getString(NAME_KEY));
@@ -51,7 +52,7 @@ public class ReceiveMessageFragment extends Fragment {
         replyButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                listener.onClick();
+                listener.onReplyClick();
 
             }
         });
@@ -59,7 +60,7 @@ public class ReceiveMessageFragment extends Fragment {
     }
 
     public interface OnReplyButtonClick {
-        void onClick();
+        void onReplyClick();
     }
 
 }

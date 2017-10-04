@@ -47,7 +47,7 @@ public class SendMessageFragment extends Fragment {
             public void onClick(View view) {
                 String name = Edit1.getText().toString();;
                 String message = Edit2.getText().toString();
-                sendButtonClick.onClick(name, message);
+                sendButtonClick.onSenderClick(name, message);
 
             }
         });
@@ -55,7 +55,7 @@ public class SendMessageFragment extends Fragment {
     }
 
     public interface OnSendButtonClick{
-        void onClick(String senderName, String senderMessage);
+        void onSenderClick(String senderName, String senderMessage);
     }
 
 }

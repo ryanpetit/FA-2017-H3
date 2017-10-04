@@ -16,7 +16,7 @@ public class SenderActivity extends AppCompatActivity implements SendMessageFrag
     }
 
     @Override
-    public void onClick(String senderName, String senderMessage) {
+    public void onSenderClick(String senderName, String senderMessage) {
         Intent intent = new Intent(this, ReceiverActivity.class);
         if (senderName != null) {
             intent.putExtra(ReceiverActivity.SENDER_NAME_KEY, senderName);
