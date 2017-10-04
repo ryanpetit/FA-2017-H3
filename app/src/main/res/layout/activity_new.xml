@@ -9,6 +9,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/new_activity_text_view"/>
+        android:id="@+id/new_activity_text_view"
+        android:text="You have reached a dead end."/>
+
+    <Button
+        android:id="@+id/start_over"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Over"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="15dp"/>
 
 </android.support.constraint.ConstraintLayout>
