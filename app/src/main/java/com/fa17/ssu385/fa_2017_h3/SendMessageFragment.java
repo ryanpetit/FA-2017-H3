@@ -37,17 +37,21 @@ public class SendMessageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
+
         linearEdit1 = (EditText)view.findViewById(R.id.linear_edit1);
         linearEdit2 = (EditText)view.findViewById(R.id.linear_edit2);
         sendButton = (Button)view.findViewById(R.id.send_button);
+
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = linearEdit1.getText().toString();
                 String message = linearEdit2.getText().toString();
+
                 listener.onClick(name, message);
             }
         });
+
         return view;
     }
 

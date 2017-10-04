@@ -1,11 +1,14 @@
 package com.fa17.ssu385.fa_2017_h3;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -18,10 +21,18 @@ public class ReceiveMessageFragment extends Fragment {
     public static final String MESSAGE_KEY = "MESSAGE";
     private TextView nameReceipt;
     private TextView messageText;
+    private Button replyButton;
+    private OnReplyButtonClick listener;
 
 
     public ReceiveMessageFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        listener = (OnReplyButtonClick) getActivity();
     }
 
 
@@ -33,6 +44,16 @@ public class ReceiveMessageFragment extends Fragment {
 
         nameReceipt = (TextView)view.findViewById(R.id.receive_linear1_text2);
         messageText = (TextView)view.findViewById(R.id.receive_linear2_text);
+        replyButton = (Button)view.findViewById(R.id.reply_button);
+
+        replyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //listener.onClick();
+                Intent navIntent = new Intent(getActivity(), NewActivity.class);
+                startActivity(navIntent);
+            }
+        });
 
         if(getArguments() != null) {
             if (getArguments().containsKey(NAME_KEY)) {
@@ -45,6 +66,10 @@ public class ReceiveMessageFragment extends Fragment {
         }
 
         return view;
+    }
+
+    public interface OnReplyButtonClick {
+        void onClick();
     }
 
 }
