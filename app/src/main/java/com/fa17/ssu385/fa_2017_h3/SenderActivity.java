@@ -31,8 +31,6 @@ public class SenderActivity extends AppCompatActivity implements SendMessageFrag
         if(senderMessage != null){
             intent.putExtra(ReceiverActivity.SENDER_MESSAGE_KEY, senderMessage);
         }
-
         startActivity(intent);
-
     }
 }

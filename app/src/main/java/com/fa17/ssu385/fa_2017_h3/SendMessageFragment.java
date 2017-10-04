@@ -31,7 +31,7 @@ public class SendMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (SenderActivity)getActivity();
+        listener = (OnSendButtonCLick) getActivity();
     }
 
     @Override

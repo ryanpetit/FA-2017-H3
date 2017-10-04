@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Button;
 
 import org.w3c.dom.Text;
 
@@ -17,26 +18,26 @@ import org.w3c.dom.Text;
  */
 public class ReceiveMessageFragment extends Fragment {
 
-    public static final String NAME_KEY = "nameKey";
-    public static final String MESSAGE_KEY = "sendKey";
+    public static final String NAME_KEY = "name_Key";
+    public static final String MESSAGE_KEY = "message_Key";
 
     private TextView nameReceipt;
     private TextView messageText;
 
-    //private OnReplyButtonCLick listerner
-    //private Button replyButton;
+    private OnReplyButtonClick listener;
+    private Button replyButton;
 
     public ReceiveMessageFragment() {
         // Required empty public constructor
     }
 
-    /*
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listerner = (OnReplyButtonClick)getActivity();
+        listener = (OnReplyButtonClick) getActivity();
     }
-    */
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,19 +47,6 @@ public class ReceiveMessageFragment extends Fragment {
 
         nameReceipt = (TextView)view.findViewById(R.id.receive_textview2);
         messageText = (TextView)view.findViewById(R.id.receive_textview3);
-
-        /*
-            replyButton = (Button)view.FindViewById(R.id.send_button)
-
-            replyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-         */
-
 
         if(getArguments() != null){
             if(getArguments().containsKey(NAME_KEY)){
@@ -70,13 +58,23 @@ public class ReceiveMessageFragment extends Fragment {
 
         }
 
+        replyButton = (Button)view.findViewById(R.id.reply_button);
+
+        replyButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+                listener.onClick();
+
+            }
+        });
+
         return view;
     }
 
-    /*
-    public interface OnReplyButtonCLick{
+
+    public interface OnReplyButtonClick{
         void onClick();
     }
-    */
+
 
 }

@@ -1,15 +1,16 @@
 package com.fa17.ssu385.fa_2017_h3;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-//public class SenderActivity extends AppCompatActivity implements ReceiverMessageFragment.OnSendButtonCLick{
+public class ReceiverActivity extends AppCompatActivity implements ReceiveMessageFragment.OnReplyButtonClick, SendMessageFragment.OnSendButtonCLick{
 
-public class ReceiverActivity extends AppCompatActivity {
+    public static final String SENDER_NAME_KEY = "sender_name_key";
+    public static final String SENDER_MESSAGE_KEY = "sender_message_key";
 
-    public static final String SENDER_NAME_KEY = "nameKey";
-    public static final String SENDER_MESSAGE_KEY = "sendKey";
+    private SendMessageFragment sendMessageFragment;
     private ReceiveMessageFragment myReceiveMessageFragment;
 
     @Override
@@ -38,12 +39,33 @@ public class ReceiverActivity extends AppCompatActivity {
     }
 
 
-/*
+
     @Override
     public void onClick() {
         sendMessageFragment = new SendMessageFragment();
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.activity_receiver_text, sendMessageFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+    }
+
+    @Override
+    public void onClick(String senderName, String senderMessage){
+        Intent intent = new Intent(this, ReceiverActivity.class);
+
+        if(senderName != null){
+            intent.putExtra(ReceiverActivity.SENDER_NAME_KEY, senderName);
+        }
+
+        if(senderMessage != null){
+            intent.putExtra(ReceiverActivity.SENDER_MESSAGE_KEY, senderMessage);
+        }
+        startActivity(intent);
+    }
 
 
-    }*/
+
+
 }
