@@ -42,7 +42,7 @@ public class ReceiverActivity extends AppCompatActivity implements ReceiveMessag
     }
 
     @Override
-    public void onClick() {
+    public void onReplyClick() {
 
         sendMessageFragment = new SendMessageFragment();
 
@@ -53,17 +53,8 @@ public class ReceiverActivity extends AppCompatActivity implements ReceiveMessag
     }
 
     @Override
-    public void onClick(String senderName, String senderMessage) {
-
-        Intent receiverIntent = new Intent(this, ReceiverActivity.class);
-
-        if(senderName != null) {
-            receiverIntent.putExtra(ReceiverActivity.SENDER_NAME_KEY, senderName);
-        }
-        if(senderMessage != null) {
-            receiverIntent.putExtra(ReceiverActivity.SENDER_MESSAGE_KEY, senderMessage);
-        }
-
+    public void onSendClick(String senderName, String senderMessage) {
+        Intent receiverIntent = new Intent(this, NewActivity.class);
         startActivity(receiverIntent);
     }
 }

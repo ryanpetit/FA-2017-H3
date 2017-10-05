@@ -59,7 +59,7 @@ public class ReceiveMessageFragment extends Fragment {
         replyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onClick();
+                listener.onReplyClick();
             }
         });
 
@@ -67,7 +67,7 @@ public class ReceiveMessageFragment extends Fragment {
     }
 
     public interface OnReplyButtonClick {
-        void onClick();
+        void onReplyClick();
     }
 
 }
