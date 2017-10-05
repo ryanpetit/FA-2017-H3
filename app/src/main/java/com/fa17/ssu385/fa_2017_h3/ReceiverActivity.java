@@ -1,9 +1,10 @@
 package com.fa17.ssu385.fa_2017_h3;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ReceiverActivity extends AppCompatActivity {
+public class ReceiverActivity extends AppCompatActivity implements SendMessageFragment.OnSendButtonClick{
 
     public static final String NAME_KEY_SENDER = "name_key_sender";
     public static final String MESSAGE_KEY_SENDER = "message_key_sender";
@@ -27,8 +28,15 @@ public class ReceiverActivity extends AppCompatActivity {
 
         receiverFragment.setArguments(args);
 
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.receiver_frame_layout, receiverFragment)
-                .commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.receiver_frame_layout, receiverFragment).commit();
+    }
+
+    @Override
+    public void onClick(String senderName, String senderMessage) {
+        SendMessageFragment newSenderFrag = new SendMessageFragment();
+        FragmentTransaction transaction = getSupportFragmentManager();
+        transaction.replace(R.id.bottom_button, newSenderFrag);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
