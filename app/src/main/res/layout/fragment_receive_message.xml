@@ -53,7 +53,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/id_bs_5"
+        android:id="@+id/fragment_reply_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
