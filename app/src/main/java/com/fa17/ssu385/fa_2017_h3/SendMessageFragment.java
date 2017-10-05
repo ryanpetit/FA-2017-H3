@@ -28,10 +28,10 @@ public class SendMessageFragment extends Fragment {
         // empty constructor
     }
 
-    @Override
-    public void onAttach(Context context) {
+    @Override   // STEP 1 > FRAGMENT LIFE-CYCLE
+    public void onAttach(Context context) { //fragment cannot exist without onAttach attaching them to an activity
         super.onAttach(context);
-        sendButtonClick = (SenderActivity)getActivity();
+        sendButtonClick = (OnSendButtonClick) getActivity();
     }
 
     @Override
@@ -53,7 +53,7 @@ public class SendMessageFragment extends Fragment {
         return view;
     }
 
-    public interface OnSendButtonClick{
+    public interface OnSendButtonClick{ //interfaces can only be defined as public
         void onClick(String senderName, String senderMessage);
     }
 

@@ -4,8 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class ReceiverActivity extends AppCompatActivity {
-    public static final String SENDER_NAME_KEY= "garbage";
-    public static final String SENDER_MESSAGE_KEY = "garbage2";
+    public static final String SENDER_NAME_KEY= "sender_name_key";
+    public static final String SENDER_MESSAGE_KEY = "sender_message_key";
     private ReceiveMessageFragment receivedMessage;
 
 

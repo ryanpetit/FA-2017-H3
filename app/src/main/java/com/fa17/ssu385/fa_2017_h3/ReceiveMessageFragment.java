@@ -13,8 +13,8 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class ReceiveMessageFragment extends Fragment {
-    public static final String NAME_KEY = "gkkdjf";
-    public static final String MESSAGE_TEXT = "jfdkjf";
+    public static final String NAME_KEY = "name_key";
+    public static final String MESSAGE_TEXT = "message_text";
     private TextView nameReceipt;
     private TextView messageText;
 
