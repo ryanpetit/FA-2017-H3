@@ -23,7 +23,7 @@ public class ReceiveMessageFragment extends Fragment {
     private Button replyButton;
 
     //new code
-   // private OnReplyButtonClick listener;
+    private OnReplyButtonClick listener;
 
     public ReceiveMessageFragment() {
         // Required empty public constructor
@@ -32,7 +32,7 @@ public class ReceiveMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-       // listener = (OnReplyButtonClick) getActivity();
+        listener = (OnReplyButtonClick) getActivity();
     }
 
 
@@ -45,14 +45,14 @@ public class ReceiveMessageFragment extends Fragment {
 
         receiveName = (TextView)view.findViewById(R.id.receive_name);
         receiveMessage = (TextView)view.findViewById(R.id.receive_message);
-        //replyButton = (Button)view.findViewById(R.id.reply_button);
+        replyButton = (Button)view.findViewById(R.id.reply_button);
 
-       /* replyButton.setOnClickListener(new View.OnClickListener(){
+        replyButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 listener.onClick();
             }
-        });*/
+        });
 
         if (getArguments() != null){
             if(getArguments().containsKey(NAME_KEY)){
@@ -67,8 +67,8 @@ public class ReceiveMessageFragment extends Fragment {
         return view;
     }
 
-    /*public interface OnReplyButtonClick{
+    public interface OnReplyButtonClick{
         void onClick();
-    }*/
+    }
 
 }

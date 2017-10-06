@@ -14,9 +14,10 @@ public class NewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new);
 
         newText = (TextView)findViewById(R.id.new_text);
-        if (getIntent().getStringExtra(SUCCESS_MESSAGE_KEY) != null){
-            newText.setText(getIntent().getStringExtra(SUCCESS_MESSAGE_KEY));
-        }
+        newText.setText("YA done did it");
+        //if (getIntent().getStringExtra(SUCCESS_MESSAGE_KEY) != null){
+         //   newText.setText(getIntent().getStringExtra(SUCCESS_MESSAGE_KEY));
+        //}
 
     }
 }

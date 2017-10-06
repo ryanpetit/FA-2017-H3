@@ -5,11 +5,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ReceiverActivity extends AppCompatActivity { //implements ReceiveMessageFragment.OnReplyButtonClick {
+public class ReceiverActivity extends AppCompatActivity implements ReceiveMessageFragment.OnReplyButtonClick, SendMessageFragment.OnSendButtonClick {
     public static final String SENDER_NAME_KEY = "sender_name_key";
     public static final String SENDER_MESSAGE_KEY = "sender_message_key";
     private ReceiveMessageFragment receiveMessageFragment;
-    //private SendMessageFragment sendMessageFragment;
+    private SendMessageFragment sendMessageFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class ReceiverActivity extends AppCompatActivity { //implements ReceiveMe
                                     .commit();
     }
 
-   /* @Override
+    @Override
     public void onClick() {
         sendMessageFragment = new SendMessageFragment();
         FragmentTransaction transaction  = getSupportFragmentManager().beginTransaction();
@@ -46,8 +46,16 @@ public class ReceiverActivity extends AppCompatActivity { //implements ReceiveMe
         transaction.addToBackStack(null);
         transaction.commit();
 
+        /*Intent intent = new Intent(this, NewActivity.class);
+        intent.putExtra(NewActivity.SUCCESS_MESSAGE_KEY, "I done did it!");
+        startActivity(intent);*/
+    }
+
+
+    @Override
+    public void onClick(String senderName, String senderMessage) {
         Intent intent = new Intent(this, NewActivity.class);
         intent.putExtra(NewActivity.SUCCESS_MESSAGE_KEY, "I done did it!");
         startActivity(intent);
-    }*/
+    }
 }
