@@ -5,8 +5,8 @@ import android.os.Bundle;
 
 public class ReceiverActivity extends AppCompatActivity {
 
-    public static final string Passed_Key1;
-    public static final string Passed_Key2;
+    public static final String Passed_Key1;
+    public static final String Passed_Key2;
 
     private ReceiveMessageFragment receiver;
 
@@ -14,11 +14,11 @@ public class ReceiverActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
-        receiver =;
+        receiver = new ReceiveMessageFragment();
         Bundle args = new Bundle();
     }
 
-    if(getIntent().hasExtra(SENDER_NAME_KEY)) {
+    if(getIntent().hasExtra(Passed_Key1)) {
         args.putString(ReceiveMessageFragment.NAME_KEY,
         getIntent().getStringExtra(SENDER_NAME_KEY));
     }

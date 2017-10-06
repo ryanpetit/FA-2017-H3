@@ -15,8 +15,8 @@ import android.widget.TextView;
  */
 public class ReceiveMessageFragment extends Fragment {
 
-    public static final string name = "name";
-    public static final string message = "message";
+    public static final String name = "name";
+    public static final String message = "message";
 
     private TextView nameReceipt;
     private TextView messageText;
