@@ -7,8 +7,11 @@
     tools:context="com.fa17.ssu385.fa_2017_h3.SenderActivity">
 
 <FrameLayout
-    android:id="@+id/sender_Frame_Layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"></FrameLayout>
+    android:id="@+id/sender_frame_layout"
+    android:layout_width="368dp"
+    android:layout_height="495dp"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent">
+</FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

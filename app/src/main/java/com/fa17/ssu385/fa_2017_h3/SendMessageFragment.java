@@ -1,11 +1,15 @@
 package com.fa17.ssu385.fa_2017_h3;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -13,9 +17,19 @@ import android.view.ViewGroup;
  */
 public class SendMessageFragment extends Fragment {
 
+    private EditText editTextOne;
+    private EditText editTextTwo;
+    private Button buttonOne;
+    private onSendButtonClick listener;
 
     public SendMessageFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        listener = (SenderActivity)getActivity();
     }
 
 
@@ -23,7 +37,27 @@ public class SendMessageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_send_message, container, false);
+        View view = inflater.inflate(R.layout.fragment_send_message, container, false);
+
+        editTextOne = (EditText) view.findViewById(R.id.edit_text_one);
+        editTextTwo = (EditText) view.findViewById(R.id.edit_text_two);
+        buttonOne = (Button) view.findViewById(R.id.button_one);
+
+        buttonOne.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                String name = editTextOne.getText().toString();
+                String message = editTextTwo.getText().toString();
+                listener.onClick(name, message);
+            }
+
+        });
+
+        return view;
+    }
+
+    public interface onSendButtonClick{
+        void onClick(String senderName, String senderMessage);
     }
 
 }
