@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReceiverActivity"></activity>
+        <activity android:name=".ReplyActivity"></activity>
     </application>
 
 </manifest>

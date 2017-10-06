@@ -26,12 +26,11 @@ public class SendMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (SenderActivity)getActivity();
+        listener = (OnSendButtonClick) getActivity();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
         user_message = view.findViewById(R.id.user_message_fragment);
         user_name = view.findViewById(R.id.user_name_fragment);
@@ -39,7 +38,7 @@ public class SendMessageFragment extends Fragment {
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view1) {
+            public void onClick(View view) {
                 String name = user_name.getText().toString();
                 String message = user_message.getText().toString();
                 listener.onClick(name, message);
@@ -49,7 +48,7 @@ public class SendMessageFragment extends Fragment {
     }
 
     public interface OnSendButtonClick {
-        void onClick(String sender_name, String sender_message);
+        void onClick(String senderName, String senderMessage);
     }
 
 }
