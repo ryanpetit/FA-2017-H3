@@ -53,16 +53,9 @@ public class ReceiverActivity extends AppCompatActivity implements ReceiveMessag
 
     @Override
     public void onClick(String senderName, String senderMessage){
-        Intent intent = new Intent(this, ReceiverActivity.class);
-
-        if(senderName != null){
-            intent.putExtra(ReceiverActivity.SENDER_NAME_KEY, senderName);
-        }
-
-        if(senderMessage != null){
-            intent.putExtra(ReceiverActivity.SENDER_MESSAGE_KEY, senderMessage);
-        }
+        Intent intent = new Intent(this, NewActivity.class);
         startActivity(intent);
+
     }
 
 
