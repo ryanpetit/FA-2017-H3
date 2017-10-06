@@ -22,11 +22,11 @@ public class SenderActivity extends AppCompatActivity implements SendMessageFrag
         Intent sendIntent = new Intent(this, ReceiverActivity.class);
 
         if(senderName != null) {
-            sendIntent.putExtra(ReceiverActivity.NAME_KEY, senderName);
+            sendIntent.putExtra(ReceiverActivity.SENDER_NAME_KEY, senderName);
         }
 
         if (senderMessage != null){
-            sendIntent.putExtra(ReceiverActivity.MESSAGE_KEY, senderMessage);
+            sendIntent.putExtra(ReceiverActivity.SENDER_MESSAGE_KEY, senderMessage);
         }
         startActivity(sendIntent);
     }

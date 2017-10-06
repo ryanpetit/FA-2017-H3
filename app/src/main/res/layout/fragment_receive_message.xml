@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="You have received a message from"/>
+            android:text="You have received a message from "/>
 
         <TextView
             android:id="@+id/receive_name"
