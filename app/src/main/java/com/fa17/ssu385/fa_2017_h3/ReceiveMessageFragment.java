@@ -42,6 +42,7 @@ public class ReceiveMessageFragment extends Fragment {
 
         supremeNameReceipt = (TextView)view.findViewById(R.id.first_receiver_text);
         infidelMessageReceipt = (TextView)view.findViewById(R.id.first_bottom_text);
+        mrButton = (Button)view.findViewById(R.id.bottom_button);
 
         if(getArguments() != null){
             if(getArguments().containsKey(STRING_KEY_NAME)){
@@ -55,7 +56,7 @@ public class ReceiveMessageFragment extends Fragment {
         mrButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getActivity(), SenderActivity.class);
+                Intent intent = new Intent(getActivity(), NewActivity.class);
                 startActivity(intent);
             }
         });
@@ -64,7 +65,7 @@ public class ReceiveMessageFragment extends Fragment {
     }
 
     public interface OnReplyButtonClick{
-        void onClick(String names_reply, String message_reply);
+        void onReplyClick(String replyName, String replyMessage);
     }
 
 }

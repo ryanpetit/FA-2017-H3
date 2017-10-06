@@ -4,11 +4,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ReceiverActivity extends AppCompatActivity implements SendMessageFragment.OnSendButtonClick{
+public class ReceiverActivity extends AppCompatActivity implements ReceiveMessageFragment.OnReplyButtonClick {
 
     public static final String NAME_KEY_SENDER = "name_key_sender";
     public static final String MESSAGE_KEY_SENDER = "message_key_sender";
     private ReceiveMessageFragment receiverFragment;
+    private SendMessageFragment newSenderFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,20 @@ public class ReceiverActivity extends AppCompatActivity implements SendMessageFr
     }
 
     @Override
-    public void onClick(String senderName, String senderMessage) {
-        SendMessageFragment newSenderFrag = new SendMessageFragment();
-        FragmentTransaction transaction = getSupportFragmentManager();
-        transaction.replace(R.id.bottom_button, newSenderFrag);
+    public void onReplyClick(String replyName, String replyMessage) {
+        newSenderFrag = new SendMessageFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.bottom_receiver_layout, newSenderFrag);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    //@Override
+    //public void onReplyClick(String nameReply, String messageReply) {
+    //    newSenderFrag = new SendMessageFragment();
+    //    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    //    transaction.replace(R.id.bottom_button, newSenderFrag);
+    //    transaction.addToBackStack(null);
+    //    transaction.commit();
     }
 }

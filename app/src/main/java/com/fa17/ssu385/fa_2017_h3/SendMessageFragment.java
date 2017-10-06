@@ -45,14 +45,14 @@ public class SendMessageFragment extends Fragment {
             public void onClick(View v){
                 String nameString = supremeNameText.getText().toString();
                 String messageString = infidelMessageText.getText().toString();
-                listener.onClick(nameString, messageString);
+                listener.onSenderClick(nameString, messageString);
             }
         });
         return view;
     }
 
     public interface OnSendButtonClick{
-        void onClick(String senderName, String senderMessage);
+        void onSenderClick(String senderName, String senderMessage);
     }
 
 }
