@@ -17,9 +17,9 @@ import android.widget.EditText;
  */
 public class SendMessageFragment extends Fragment {
 
-    private EditText editTextOne;
-    private EditText editTextTwo;
-    private Button buttonOne;
+    private EditText username;
+    private EditText userMessage;
+    private Button sendButton;
     private onSendButtonClick listener;
 
     public SendMessageFragment() {
@@ -29,7 +29,7 @@ public class SendMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (SenderActivity)getActivity();
+        listener = (SenderActivity) getActivity();
     }
 
 
@@ -39,15 +39,16 @@ public class SendMessageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
 
-        editTextOne = (EditText) view.findViewById(R.id.edit_text_one);
-        editTextTwo = (EditText) view.findViewById(R.id.edit_text_two);
-        buttonOne = (Button) view.findViewById(R.id.button_one);
+        username = (EditText) view.findViewById(R.id.username);
+        userMessage = (EditText) view.findViewById(R.id.user_message);
+        sendButton = (Button) view.findViewById(R.id.send_button);
 
-        buttonOne.setOnClickListener(new View.OnClickListener(){
+        sendButton.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view) {
-                String name = editTextOne.getText().toString();
-                String message = editTextTwo.getText().toString();
+                String name = username.getText().toString();
+                String message = userMessage.getText().toString();
                 listener.onClick(name, message);
             }
 

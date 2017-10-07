@@ -4,7 +4,6 @@ package com.fa17.ssu385.fa_2017_h3;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.TextViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +16,13 @@ import android.widget.TextView;
  */
 public class ReceiveMessageFragment extends Fragment {
 
-    public static final String nameKey = "nameKey";
-    public static final String messageKey = "messageKey";
-    private TextView nameReceipt;
+    public static final String nameKey = "nameKeystring";
+    public static final String messageKey = "messageKeystring";
+    private TextView name;
     private TextView message;
     private Button replyButton;
     private OnReplyButtonClick listener;
+
     public ReceiveMessageFragment() {
         // Required empty public constructor
     }
@@ -30,7 +30,7 @@ public class ReceiveMessageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listener = (OnReplyButtonClick)getActivity();
+        //listener = (OnReplyButtonClick) getActivity();
     }
 
 
@@ -39,14 +39,22 @@ public class ReceiveMessageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_receive_message, container, false);
-        nameReceipt = (TextView)view.findViewById(R.id.edit_text_one);
-        message = (TextView)view.findViewById(R.id.edit_text_two);
+        name = (TextView)view.findViewById(R.id.username);
+        message = (TextView)view.findViewById(R.id.message);
         replyButton = (Button)view.findViewById(R.id.reply_button);
+
+        replyButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                listener.onClick();
+            }
+        });
 
 
         if (getArguments() != null) {
             if(getArguments().containsKey(nameKey)){
-                nameReceipt.setText(getArguments().getString(nameKey));
+                name.setText(getArguments().getString(nameKey));
             }
             if(getArguments().containsKey(messageKey)){
                 message.setText(getArguments().getString(messageKey));

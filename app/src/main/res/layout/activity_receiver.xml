@@ -7,7 +7,7 @@
     tools:context="com.fa17.ssu385.fa_2017_h3.ReceiverActivity">
 
     <FrameLayout
-        android:id="@+id/activity_receiver"
+        android:id="@+id/receiver_frame_layout"
         android:layout_width="368dp"
         android:layout_height="495dp">
         <!--tools:layout_editor_absoluteY="8dp"-->

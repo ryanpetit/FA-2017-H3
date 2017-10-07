@@ -14,6 +14,7 @@ public class SenderActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sender);
         sendMessageFragment = new SendMessageFragment();
+
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.sender_frame_layout, sendMessageFragment)
                 .commit();
@@ -21,7 +22,7 @@ public class SenderActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(String senderName, String senderMessage) {
-        Intent myIntent = new Intent(this, ReceiverActivity.class);
+        Intent myIntent = new Intent(SenderActivity.this, ReceiverActivity.class);
 
         if(senderName != null){
             myIntent.putExtra(ReceiverActivity.nameKeyR, senderName);
