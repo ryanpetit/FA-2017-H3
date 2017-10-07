@@ -5,8 +5,8 @@ import android.os.Bundle;
 
 public class ReceiverActivity extends AppCompatActivity {
 
-    public static final String Passed_Key1;
-    public static final String Passed_Key2;
+    public static final String name2 = "name2";
+    public static final String message2 = "message2";
 
     private ReceiveMessageFragment receiver;
 
@@ -18,19 +18,19 @@ public class ReceiverActivity extends AppCompatActivity {
         Bundle args = new Bundle();
     }
 
-    if(getIntent().hasExtra(Passed_Key1)) {
-        args.putString(ReceiveMessageFragment.NAME_KEY,
-        getIntent().getStringExtra(SENDER_NAME_KEY));
+    if(getIntent().hasExtra(name2)) {
+        args.putString(receiver.name,
+        getIntent().getStringExtra(name2));
     }
 
-    if(getIntent().hasExtra(SENDER_MESSAGE_KEY)) {
-        args.putString(ReceiveMesssageFragment.MESSAGE_KEY,
-                getIntent().getStringExtra(SENDER_MESSAGE_KEY));
+    if(getIntent().hasExtra(message2)) {
+        args.putString(receiver.message,
+                getIntent().getStringExtra(message2));
     }
 
-    myReceiveMessageFragment.setArguments(args);
+    receiver.setArguments(args);
 
     getSupportFragmentManager().beginTransaction()
-                                .add(R.id.receiver_fragment_container, receiveMessageFragment)
+                                .add(R.id.receiver_frame, receiver)
                                 .commit();
 }

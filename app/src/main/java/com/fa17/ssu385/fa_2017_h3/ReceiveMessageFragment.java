@@ -18,8 +18,8 @@ public class ReceiveMessageFragment extends Fragment {
     public static final String name = "name";
     public static final String message = "message";
 
-    private TextView nameReceipt;
-    private TextView messageText;
+    private TextView nameReceive;
+    private TextView messageReceive;
     private Button reply;
 
     public ReceiveMessageFragment() {
@@ -33,18 +33,18 @@ public class ReceiveMessageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_receive_message, container, false);
 
-        nameReceipt = (TextView)view.findViewById(R.id.receive_text1);
-        messageText = (TextView)view.findViewById(R.id.receive_text2);
-        reply =;
+        nameReceive = (TextView)view.findViewById(R.id.receive_text2);
+        messageReceive = (TextView)view.findViewById(R.id.receive_text3);
+
 
 
 
         if (getArguments() != null) {
             if(getArguments().containsKey(name)) {
-                nameReceipt.setText(getArguments().getString(name));
+                nameReceive.setText(getArguments().getString(name));
             }
             if(getArguments().containsKey(message)) {
-                messageText.setText(getArguments().getString(message));
+                messageReceive.setText(getArguments().getString(message));
             }
         }
         return view;
