@@ -15,7 +15,7 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ReceiveMessageFragment extends Fragment {
+public class ReceiveMessageFragment extends Fragment{
 
     public static final String STRING_KEY_NAME = "string_key_name";
     public static final String STRING_KEY_MESSAGE = "string_key_message";
@@ -56,8 +56,7 @@ public class ReceiveMessageFragment extends Fragment {
         mrButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getActivity(), NewActivity.class);
-                startActivity(intent);
+                listener.onReplyClick();
             }
         });
 
@@ -65,7 +64,7 @@ public class ReceiveMessageFragment extends Fragment {
     }
 
     public interface OnReplyButtonClick{
-        void onReplyClick(String replyName, String replyMessage);
+        void onReplyClick();
     }
 
 }
