@@ -1,7 +1,6 @@
 package com.fa17.ssu385.fa_2017_h3;
 
 
-import android.app.job.JobScheduler;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,44 +15,44 @@ import android.widget.EditText;
  * A simple {@link Fragment} subclass.
  */
 public class SendMessageFragment extends Fragment {
-
-
-    private EditText Edit1;
-    private EditText Edit2;
-    private Button Button1;
-    private OnSendButtonClick sendButtonClick;
-
+    private EditText enterName;
+    private EditText enterMessage;
+    private Button sendButton;
+    private OnSendButtonClick listener;
 
     public SendMessageFragment() {
-        // empty constructor
+        // Required empty public constructor
     }
 
-    @Override   // STEP 1 > FRAGMENT LIFE-CYCLE
-    public void onAttach(Context context) { //fragment cannot exist without onAttach attaching them to an activity
+    @Override
+    public void onAttach(Context context) {
         super.onAttach(context);
-        sendButtonClick = (OnSendButtonClick) getActivity();
+        listener = (OnSendButtonClick) getActivity();
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_send_message, container, false);
-        Edit1 = view.findViewById(R.id.Edit1);
-        Edit2 = view.findViewById(R.id.Edit2);
-        Button1 = view.findViewById(R.id.Button1);
-        Button1.setOnClickListener(new View.OnClickListener() {
+        enterName = (EditText) view.findViewById(R.id.enter_name);
+        enterMessage = (EditText) view.findViewById(R.id.enter_message);
+        sendButton = (Button)view.findViewById(R.id.send_button);
+        sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = Edit1.getText().toString();;
-                String message = Edit2.getText().toString();
-                sendButtonClick.onClick(name, message);
-
+                String name;
+                String message;
+                name = enterName.getText().toString();
+                message = enterMessage.getText().toString();
+                listener.onClick(name, message);
             }
         });
         return view;
     }
 
-    public interface OnSendButtonClick{ //interfaces can only be defined as public
+    public interface OnSendButtonClick{
+        //all methods and interfaces must be PUBLIC
         void onClick(String senderName, String senderMessage);
     }
 

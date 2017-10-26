@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fa17.ssu385.fa_2017_h3.ReceiverActivity">
+    tools:context="com.fa17.ssu385.fa_2017_h3.NewActivity">
 
-    <FrameLayout
-        android:id="@+id/receiver_container"
+    <TextView
+        android:id = "@+id/new_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>

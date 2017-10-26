@@ -6,59 +6,60 @@
     tools:context="com.fa17.ssu385.fa_2017_h3.SendMessageFragment">
 
     <LinearLayout
+        android:id="@+id/send_linear1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/LinLay1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:padding="15dp">
+
         <TextView
+            android:id="@+id/name_prompt"
+            android:layout_weight="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Text1"
-            android:layout_weight="0"
             android:text="Enter your name: "/>
         <EditText
+            android:id="@+id/enter_name"
+            android:layout_weight="2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/Edit1"
-            android:layout_weight="2"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/send_linear2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/LinLay2"
-        app:layout_constraintTop_toBottomOf="@+id/LinLay1"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/send_linear1"
         android:padding="15dp">
+
         <TextView
+            android:id="@+id/message_prompt"
+            android:layout_weight="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Text2"
-            android:layout_weight="0"
             android:text="Enter your message: "/>
         <EditText
+            android:id="@+id/enter_message"
+            android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/Edit2"
-            android:layout_weight="2"
-            android:inputType="textMultiLine"/>
+            android:inputType="textMultiLine" />
     </LinearLayout>
+
     <Button
+        android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Button1"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
         android:layout_margin="15dp"
         android:text="send"/>
-
-
 
 </android.support.constraint.ConstraintLayout>
