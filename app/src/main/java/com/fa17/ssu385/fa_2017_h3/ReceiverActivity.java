@@ -4,7 +4,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ReceiverActivity extends AppCompatActivity implements ReceiveMessageFragment.OnReplyButtonClick {
+public class ReceiverActivity extends AppCompatActivity implements ReceiveMessageFragment.OnReplyButtonClick, SendMessageFragment.OnSendButtonClick {
 
     public static final String NAME_KEY_SENDER = "name_key_sender";
     public static final String MESSAGE_KEY_SENDER = "message_key_sender";
@@ -36,8 +36,13 @@ public class ReceiverActivity extends AppCompatActivity implements ReceiveMessag
     public void onReplyClick() {
         newSenderFrag = new SendMessageFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.bottom_receiver_layout, newSenderFrag);
+        transaction.replace(R.id.receiver_frame_layout, newSenderFrag);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onSenderClick(String senderName, String senderMessage) {
+
     }
 }
